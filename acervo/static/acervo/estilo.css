@@ -32,6 +32,26 @@ form p {
     margin-bottom: 12px;
 }
 
+form.busca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+form.busca input[type="text"],
+form.busca select {
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form.busca input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+}
+
 button {
     background-color: #7a1f1f;
     color: white;
