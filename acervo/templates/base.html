@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="{% static 'acervo/estilo.css' %}">
+</head>
+<body>
+    <header>
+        <h2><a href="{% url 'lista' %}">📚 Biblioteca</a></h2>
+    </header>
+
+    {% block conteudo %}
+    {% endblock %}
+
+    <footer>&copy; 2026 - Laboratório de Programação Full Stack</footer>
+</body>
+</html>

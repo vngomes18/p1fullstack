@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h1>Acervo</h1>
+
+<p><a href="{% url 'novo_livro' %}">+ Cadastrar novo livro</a></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Ano</th>
+            <th>Disponível</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for livro in livros %}
+        <tr>
+            <td>{{ livro.titulo }}</td>
+            <td>{{ livro.autor }}</td>
+            <td>{{ livro.ano }}</td>
+            <td>{% if livro.disponivel %}Sim{% else %}Não{% endif %}</td>
+            <td>
+                <a href="{% url 'editar_livro' livro.pk %}">editar</a> |
+                <a href="{% url 'apagar_livro' livro.pk %}">apagar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">Nenhum livro cadastrado.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
